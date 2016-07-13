@@ -1,7 +1,17 @@
 
 $(document).ready(function() {
   var playerTurnNumber = 1;
+  var playerStart = $("#1");
+  var player1Position = 1;
+  var player2Position = 1;
+
   var diceTotal = null;
+
+  //creating the players
+  var playerOnePiece = $("<div class='player-token one'></div>");
+  var playerTwoPiece = $("<div class='player-token two'></div>");
+
+  playerStart.append(playerOnePiece, playerTwoPiece);
 
   var gameBoard = [[100, 99, 98, 97, 96, 95, 94, 93, 92, 91],
                    [81, 82, 83, 84, 85, 86, 87, 88, 89, 90],
@@ -26,19 +36,6 @@ $(document).ready(function() {
   }
   createBoard();
 
-  var playerStart = $("#1");
-  var player1Position = 1;
-  var player2Position = 1;
-
-  //creating the players
-  var playerOnePiece = $("<div class='player-token one'></div>");
-  var playerTwoPiece = $("<div class='player-token two'></div>");
-
-  playerStart.append(playerOnePiece, playerTwoPiece);
-  //selecting the players
-  var playerOne = $("#one");
-  var playerTwo = $("#two");
-
   // Dicey Dicey
   $('#roll').click(function() {
     var result = rollDice();
@@ -58,21 +55,56 @@ $(document).ready(function() {
     die1.innerHTML = d1;
     die2.innerHTML = d2;
     status.innerHTML = "You rolled "+diceTotal+".";
+
     // if(d1 == d2){
     //     status.innerHTML += " DOUBLES! You get a free turn!!";
     // }
-    return diceTotal;
   }
+
+
+  function checkLadder() {
+    var ladderStart = [5, 23, 46, 62, 88];
+    var ladderEnd = [38, 44, 78, 71, 100];
+    for(var i=0; i<ladderStart.length; i++) {
+      if(player1Position === ladderStart[i]) {
+        player1Position = ladderEnd[i];
+        alert("Up up and away! Move up to " + player1Position + "!");
+      } else if(player2Position === ladderStart[i]) {
+        player2Position = ladderEnd[i];
+        alert("Up up and away! Move up to " + player2Position + "!");
+      }
+      }
+    }
+
+    function checkSnake() {
+      var snakeHead = [28, 41, 54, 83, 96];
+      var snakeTail = [7, 21, 32, 55, 59];
+      for(var i=0; i<snakeHead.length; i++) {
+        if(player1Position === snakeHead[i]) {
+          player1Position = snakeTail[i];
+          alert("Snake attack! Slide down to " + player1Position + " :(");
+        } else if(player2Position === snakeHead[i]) {
+          player2Position = snakeTail[i];
+          alert("Snake attack! Slide down to " + player2Position + " :(");
+        }
+        }
+      }
 
   function newPosition() {
     if(playerTurnNumber % 2 === 1) {
-      //it is playerOne's turn, move playerOne's piece by rollDice result
+      //it is playerOne's turn, move playerOne's piece by rollDice result,
       player1Position += diceTotal;
+      checkLadder();
+      checkSnake();
+      //checkSnake, checkLadder, update position
       $('#'+player1Position).append(playerOnePiece);
-      console.log(player1Position);
+      $('#game-status').text("Player 1 moves to " + player1Position + "!");
     } else {
       player2Position += diceTotal;
+      checkLadder();
+      checkSnake();
       $('#'+player2Position).append(playerTwoPiece);
+      $('#game-status').text("Player 2 moves to " + player2Position + "!");
     }
   }
 
