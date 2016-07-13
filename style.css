@@ -1,0 +1,49 @@
+body {
+  text-align: center;
+  font-family: Helvetica, sans-serif;
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+.dice{
+	float:left;
+	width:32px;
+	background:#F5F5F5;
+	border: 1px solid black;
+	padding:10px;
+	font-size:24px;
+	text-align:center;
+	margin:5px;
+}
+
+
+.player-token {
+  position: absolute;
+}
+
+.one {
+  background-image: url('/assets/pikachu.png');
+  height: 32px;
+  width: 32px;
+}
+
+.two {
+  background-image: url('/assets/charmander.png');
+  height: 40px;
+  width: 40px;
+}
+
+.box {
+  border: 1px solid black;
+  display: inline-block;
+  width: 5%;
+  text-align: left;
+}
+
+.box:after {
+ content: "";
+ display: block;
+ padding-bottom: 80%;
+}
