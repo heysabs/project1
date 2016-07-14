@@ -31,6 +31,10 @@ h1 {
   background-color: rgba(255,255,255,0.6);
 }
 
+.player-two img {
+  margin-top: 4px;
+}
+
 .clearfix {
     overflow: auto;
   }
@@ -76,10 +80,11 @@ button:hover {
   position: absolute;
   margin: 0 auto;
   margin-top: -10px;
+  margin-left: 10px;
 }
 
 .one {
-  background-image: url('/assets/pikachu.png');
+  background-image: url('/assets/pikachu.gif');
   height: 80px;
   width: 80px;
   background-repeat: no-repeat;
@@ -87,7 +92,8 @@ button:hover {
 }
 
 .two {
-  background-image: url('/assets/charmander.png');
+  background-image: url('/assets/charmander.gif');
+  /*background-color: pink;*/
   height: 80px;
   width: 80px;
   background-repeat: no-repeat;
