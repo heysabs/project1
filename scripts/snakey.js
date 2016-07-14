@@ -1,17 +1,14 @@
 
 $(document).ready(function() {
   var playerTurnNumber = 1;
-  var playerStart = $("#1");
   var player1Position = 1;
   var player2Position = 1;
 
   var diceTotal = null;
 
-  //creating the players
+  // Creating the player pieces
   var playerOnePiece = $("<div class='player-token one'></div>");
   var playerTwoPiece = $("<div class='player-token two'></div>");
-
-  playerStart.append(playerOnePiece, playerTwoPiece);
 
   var gameBoard = [[100, 99, 98, 97, 96, 95, 94, 93, 92, 91],
                    [81, 82, 83, 84, 85, 86, 87, 88, 89, 90],
@@ -24,6 +21,15 @@ $(document).ready(function() {
                    [20, 19, 18, 17, 16, 15, 14, 13, 12, 11],
                    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]];
 
+// Snake Coordinates
+  var snakeHead = [28, 41, 54, 77, 83, 96];
+  var snakeTail = [7, 21, 32, 43, 55, 59];
+
+// Ladder Coodinates
+  var ladderStart = [5, 23, 46, 62, 88];
+  var ladderEnd = [38, 44, 78, 71, 100];
+
+// Set up the board
   function createBoard() {
     for(var i = 0; i < gameBoard.length; i++) {
       var row = $("<div>").addClass("row");
@@ -36,11 +42,34 @@ $(document).ready(function() {
   }
   createBoard();
 
+  function makeSnake() {
+    for(var i=0; i<snakeHead.length; i++) {
+      var snake = snakeHead[i];
+      $('#'+ snake).addClass("snake");
+    }
+  }
+  makeSnake();
+
+  function makeLadder() {
+    for(var i=0; i<ladderStart.length; i++) {
+      var ladder = ladderStart[i];
+      $('#'+ ladder).addClass("ladder");
+    }
+  }
+  makeLadder();
+
+// Player Starting Positions
+  var playerStart = $("#1");
+
+  function appendStart() {
+    playerStart.append(playerOnePiece, playerTwoPiece);
+  }
+  appendStart();
+
   // Dicey Dicey
   $('#roll').click(function() {
     var result = rollDice();
     newPosition();
-    // movePlayer();
     checkWinner();
     playerTurnNumber++;
   });
@@ -55,7 +84,6 @@ $(document).ready(function() {
     die1.innerHTML = d1;
     die2.innerHTML = d2;
     status.innerHTML = "You rolled "+diceTotal+".";
-
     // if(d1 == d2){
     //     status.innerHTML += " DOUBLES! You get a free turn!!";
     // }
@@ -63,29 +91,25 @@ $(document).ready(function() {
 
 
   function checkLadder() {
-    var ladderStart = [5, 23, 46, 62, 88];
-    var ladderEnd = [38, 44, 78, 71, 100];
     for(var i=0; i<ladderStart.length; i++) {
       if(player1Position === ladderStart[i]) {
         player1Position = ladderEnd[i];
-        alert("Up up and away! Move up to " + player1Position + "!");
+        alert("Up up and away! You got a ride from a drifblim! Move up to " + player1Position + ".");
       } else if(player2Position === ladderStart[i]) {
         player2Position = ladderEnd[i];
-        alert("Up up and away! Move up to " + player2Position + "!");
+        alert("Up up and away! You got a ride from a drifblim! Move up to " + player2Position + ".");
       }
       }
     }
 
     function checkSnake() {
-      var snakeHead = [28, 41, 54, 83, 96];
-      var snakeTail = [7, 21, 32, 55, 59];
       for(var i=0; i<snakeHead.length; i++) {
         if(player1Position === snakeHead[i]) {
           player1Position = snakeTail[i];
-          alert("Snake attack! Slide down to " + player1Position + " :(");
+          alert("Ouch, you got attacked by a wild ekans! Slide down to " + player1Position + " :(");
         } else if(player2Position === snakeHead[i]) {
           player2Position = snakeTail[i];
-          alert("Snake attack! Slide down to " + player2Position + " :(");
+          alert("Ouch, you got attacked by a wild ekans! Slide down to " + player2Position + " :(");
         }
         }
       }
@@ -99,12 +123,14 @@ $(document).ready(function() {
       //checkSnake, checkLadder, update position
       $('#'+player1Position).append(playerOnePiece);
       $('#game-status').text("Player 1 moves to " + player1Position + "!");
+      $('#player-turn').text("Player 2, roll the dice.");
     } else {
       player2Position += diceTotal;
       checkLadder();
       checkSnake();
       $('#'+player2Position).append(playerTwoPiece);
       $('#game-status').text("Player 2 moves to " + player2Position + "!");
+      $('#player-turn').text("Player 1, roll the dice.");
     }
   }
 

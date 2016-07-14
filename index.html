@@ -2,10 +2,14 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://use.typekit.net/vdf5woa.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+    
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/skeleton.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
 
     <title>SNEAKY SNAKEY</title>
   </head>
@@ -14,31 +18,43 @@
     <div class="container">
       <h1>Sneaky Snakey</h1>
 
-      <section id="player-action">
+      <div id="player-action">
         <div class="player-one">
+          <h5>Player 1</h5>
           <img src="/assets/pikachu.png" class="playericon">
-          <h3>Player 1</h3>
         </div>
         <div class="player-two">
-          <img src="/assets/charmander-small.png" class="playericon">
-          <h3>Player 2</h3>
+          <h5>Player 2</h5>
+          <img src="/assets/charmander.png" class="playericon">
         </div>
+
         <div class = "clearfix"></div>
-        <div id="dice area">
+
+        <div id="dice-area">
+          <br /><h5 id="status">First to reach #100 wins.</h5>
+          <div class = "clearfix"></div>
+          <div id="dicey">
           <div id="die1" class="dice">0</div>
           <div id="die2" class="dice">0</div>
-          <button id="roll">Roll Dice</button>
-          <h2 id="status">Dice Status</h2>
+          </div>
+          <br /><br /><br />
+          <div class = "clearfix"></div>
+          <button id="roll">Roll</button>
         </div>
-        <div class = "clearfix"></div>
-      </section>
 
-      <h2 id="game-status">First to reach #100 wins! Player 1, roll dice to start...</h2>
+      </div>
+
+      <div class="clearfix"></div>
+
+      <div id="status-area">
+      <h4 id="game-status"></h4>
+      <h5 id="player-turn">Player 1, roll dice to start!</h5>
+      </div>
 
       <div class="board"></div>
     </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="snakey.js"></script>
+  <script src="scripts/snakey.js"></script>
   </body>
 </html>

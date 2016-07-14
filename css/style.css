@@ -1,0 +1,130 @@
+body {
+  text-align: center;
+  background-color: #009688;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 5% auto;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: "mono45-headline", sans-serif;
+  letter-spacing: 0.5rem;
+}
+
+#player-action, #status-area {
+  margin: 0 auto;
+  background-color: rgba(222,215,194,0.6);
+  padding: 1em;
+  border-radius: 2em;
+  margin-bottom: 1em;
+}
+
+.player-one, .player-two {
+  display: inline-block;
+  padding: 10px 20px 0px 20px;
+  border: 2px solid black;
+  border-radius: 1rem;
+  background-color: rgba(255,255,255,0.6);
+}
+
+.clearfix {
+    overflow: auto;
+  }
+  /* Dice Area */
+
+  #dice-area {
+    display: inline-block;
+    margin: 0 auto;
+  }
+
+.dice{
+  box-sizing: border-box;
+	float: left;
+  display: inline-block;
+	width: 58px;
+	background:#F5F5F5;
+	border: 1px solid black;
+  border-radius: 1rem;
+	padding:10px;
+	font-size:24px;
+	margin: 5px;
+}
+
+#dicey {
+  /*margin-left: 135px;
+  margin-top: -20px;*/
+  width: 140px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+button {
+  background-color: rgba(255,255,255,0.6);
+}
+
+button:hover {
+  background-color: #8bc34a;
+}
+
+/* Player Pieces */
+
+.player-token {
+  position: absolute;
+  margin: 0 auto;
+  margin-top: -10px;
+}
+
+.one {
+  background-image: url('/assets/pikachu.png');
+  height: 80px;
+  width: 80px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.two {
+  background-image: url('/assets/charmander.png');
+  height: 80px;
+  width: 80px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Board Elements */
+
+.board {
+  background-image: url('/assets/grassy.png');
+  border: 15px solid #ded7c2;
+}
+
+.box {
+  border: 1px solid white;
+  color: white;
+  display: inline-block;
+  width: 10%;
+  margin-right: -2px;
+  text-align: left;
+  /*background-color: grey;*/
+}
+
+.box:after {
+ content: "";
+ display: block;
+ padding-bottom: 80%;
+}
+
+.snake {
+  background-image: url('/assets/ekans.gif');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.ladder {
+  background-image: url('/assets/drifblim.gif');
+  background-repeat: no-repeat;
+  background-position: center;
+}
