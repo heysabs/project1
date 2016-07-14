@@ -66,13 +66,15 @@ $(document).ready(function() {
   }
   appendStart();
 
-  // Dicey Dicey
+  // Activate the dice!
   $('#roll').click(function() {
     var result = rollDice();
     newPosition();
     checkWinner();
     playerTurnNumber++;
   });
+
+  //
 
   function rollDice(){
     var die1 = document.getElementById("die1");
@@ -84,9 +86,6 @@ $(document).ready(function() {
     die1.innerHTML = d1;
     die2.innerHTML = d2;
     status.innerHTML = "You rolled "+diceTotal+".";
-    // if(d1 == d2){
-    //     status.innerHTML += " DOUBLES! You get a free turn!!";
-    // }
   }
 
 
@@ -94,12 +93,10 @@ $(document).ready(function() {
     for(var i=0; i<ladderStart.length; i++) {
       if(player1Position === ladderStart[i]) {
         player1Position = ladderEnd[i];
-        swal({title: 'Up up and away!', text: "You got a ride from a drifblim! Move up to " + player1Position + ".", imageUrl: '../assets/drifblim.gif', type: 'success', confirmButtonText: 'Next'});
-        // alert("Up up and away! You got a ride from a drifblim! Move up to " + player1Position + ".");
+        swal({title: 'Up up and away!', text: "You got a ride from a drifblim! Move up to " + player1Position + ".", imageUrl: './assets/drifblim.gif', type: 'success', confirmButtonText: 'Next'});
       } else if(player2Position === ladderStart[i]) {
         player2Position = ladderEnd[i];
-        swal({title: 'Up up and away!', text: "You got a ride from a drifblim! Move up to " + player2Position + ".", imageUrl: '../assets/drifblim.gif', type: 'success', confirmButtonText: 'Next'});
-        // alert("Up up and away! You got a ride from a drifblim! Move up to " + player2Position + ".");
+        swal({title: 'Up up and away!', text: "You got a ride from a drifblim! Move up to " + player2Position + ".", imageUrl: './assets/drifblim.gif', type: 'success', confirmButtonText: 'Next'});
       }
       }
     }
@@ -108,23 +105,20 @@ $(document).ready(function() {
       for(var i=0; i<snakeHead.length; i++) {
         if(player1Position === snakeHead[i]) {
           player1Position = snakeTail[i];
-          swal({title: 'Ouch :(', text: "You got attacked by a wild ekans! Slide down to " + player1Position + ".", imageUrl: '../assets/ekans.gif', type: 'warning', confirmButtonText: 'Next'});
-          // alert("Ouch, you got attacked by a wild ekans! Slide down to " + player1Position + " :(");
+          swal({title: 'Ouch :(', text: "You got attacked by a wild ekans! Slide down to " + player1Position + ".", imageUrl: './assets/ekans.gif', type: 'warning', confirmButtonText: 'Next'});
         } else if(player2Position === snakeHead[i]) {
           player2Position = snakeTail[i];
-          // alert("Ouch, you got attacked by a wild ekans! Slide down to " + player2Position + " :(");
-          swal({title: 'Ouch :(', text: "You got attacked by a wild ekans! Slide down to " + player2Position + ".", imageUrl: '../assets/ekans.gif', type: 'warning', confirmButtonText: 'Next'});
+          swal({title: 'Ouch :(', text: "You got attacked by a wild ekans! Slide down to " + player2Position + ".", imageUrl: './assets/ekans.gif', type: 'warning', confirmButtonText: 'Next'});
         }
         }
       }
 
   function newPosition() {
     if(playerTurnNumber % 2 === 1) {
-      //it is playerOne's turn, move playerOne's piece by rollDice result
+      // It is playerOne's turn, move playerOne's piece by rollDice result
       player1Position += diceTotal;
       checkLadder();
       checkSnake();
-      //checkSnake, checkLadder, update position
       $('#'+player1Position).append(playerOnePiece);
       $('#game-status').text("Player 1 moves to " + player1Position + "!");
       $('#player-turn').text("Player 2, roll the dice.");
@@ -143,12 +137,12 @@ $(document).ready(function() {
       swal({title: 'You made it from 0 to 100!', text: "Player 1 wins! Play again?", type: 'success', confirmButtonText: 'Restart'});
       window.setTimeout(function(){
       location.reload();
-      }, 3000);
+    }, 4000);
     } else if(player2Position >= 100) {
       swal({title: 'You made it from 0 to 100!', text: "Player 2 wins! Play again?", type: 'success', confirmButtonText: 'Restart'});
       window.setTimeout(function(){
       location.reload();
-      }, 3000);
+    }, 4000);
     }
   }
 
