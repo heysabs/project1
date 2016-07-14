@@ -128,3 +128,7 @@ button:hover {
   background-repeat: no-repeat;
   background-position: center;
 }
+
+.swal2-confirm {
+  line-height: 1;
+}
