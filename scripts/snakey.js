@@ -94,11 +94,11 @@ $(document).ready(function() {
     for(var i=0; i<ladderStart.length; i++) {
       if(player1Position === ladderStart[i]) {
         player1Position = ladderEnd[i];
-        swal({title: 'Up up and away!', text: "You got a ride from a drifblim! Move up to " + player1Position + ".", imageUrl: '/assets/drifblim.gif', type: 'success', confirmButtonText: 'Next'});
+        swal({title: 'Up up and away!', text: "You got a ride from a drifblim! Move up to " + player1Position + ".", imageUrl: '../assets/drifblim.gif', type: 'success', confirmButtonText: 'Next'});
         // alert("Up up and away! You got a ride from a drifblim! Move up to " + player1Position + ".");
       } else if(player2Position === ladderStart[i]) {
         player2Position = ladderEnd[i];
-        swal({title: 'Up up and away!', text: "You got a ride from a drifblim! Move up to " + player2Position + ".", imageUrl: '/assets/drifblim.gif', type: 'success', confirmButtonText: 'Next'});
+        swal({title: 'Up up and away!', text: "You got a ride from a drifblim! Move up to " + player2Position + ".", imageUrl: '../assets/drifblim.gif', type: 'success', confirmButtonText: 'Next'});
         // alert("Up up and away! You got a ride from a drifblim! Move up to " + player2Position + ".");
       }
       }
@@ -108,12 +108,12 @@ $(document).ready(function() {
       for(var i=0; i<snakeHead.length; i++) {
         if(player1Position === snakeHead[i]) {
           player1Position = snakeTail[i];
-          swal({title: 'Ouch :(', text: "You got attacked by a wild ekans! Slide down to " + player1Position + ".", imageUrl: '/assets/ekans.gif', type: 'warning', confirmButtonText: 'Next'});
+          swal({title: 'Ouch :(', text: "You got attacked by a wild ekans! Slide down to " + player1Position + ".", imageUrl: '../assets/ekans.gif', type: 'warning', confirmButtonText: 'Next'});
           // alert("Ouch, you got attacked by a wild ekans! Slide down to " + player1Position + " :(");
         } else if(player2Position === snakeHead[i]) {
           player2Position = snakeTail[i];
           // alert("Ouch, you got attacked by a wild ekans! Slide down to " + player2Position + " :(");
-          swal({title: 'Ouch :(', text: "You got attacked by a wild ekans! Slide down to " + player2Position + ".", imageUrl: '/assets/ekans.gif', type: 'warning', confirmButtonText: 'Next'});
+          swal({title: 'Ouch :(', text: "You got attacked by a wild ekans! Slide down to " + player2Position + ".", imageUrl: '../assets/ekans.gif', type: 'warning', confirmButtonText: 'Next'});
         }
         }
       }
