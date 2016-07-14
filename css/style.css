@@ -84,7 +84,7 @@ button:hover {
 }
 
 .one {
-  background-image: url('/assets/pikachu.gif');
+  background-image: url('../assets/pikachu.gif');
   height: 80px;
   width: 80px;
   background-repeat: no-repeat;
@@ -92,7 +92,7 @@ button:hover {
 }
 
 .two {
-  background-image: url('/assets/charmander.gif');
+  background-image: url('../assets/charmander.gif');
   /*background-color: pink;*/
   height: 80px;
   width: 80px;
@@ -103,7 +103,7 @@ button:hover {
 /* Board Elements */
 
 .board {
-  background-image: url('/assets/grassy.png');
+  background-image: url('../assets/grassy.png');
   border: 15px solid #ded7c2;
 }
 
@@ -124,13 +124,13 @@ button:hover {
 }
 
 .snake {
-  background-image: url('/assets/ekans.gif');
+  background-image: url('../assets/ekans.gif');
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .ladder {
-  background-image: url('/assets/drifblim.gif');
+  background-image: url('../assets/drifblim.gif');
   background-repeat: no-repeat;
   background-position: center;
 }
