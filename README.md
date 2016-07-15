@@ -18,7 +18,3 @@ if you're nice to them, you may hitch a ride towards the top!
 
 ##Stacks:
 * HTML, CSS and JS
-<!-- * Board is made using HTML/CSS, and with JS using an array & for loop
-* Ekans and drifblim: Created with an array
-* Player pieces are appended to each box div which corresponds to ID
-* CSS: Sweetalert2 was used to make nicer alert boxes -->
