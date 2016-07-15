@@ -9,14 +9,11 @@ On the bright side, friendly drifblims are also lurking around the forest -
 if you're nice to them, you may hitch a ride towards the top!
 
 Game play:
--- 2 player turn-based game
--- Player rolls the dice to determine number of moves to make
--- If player lands on an ekans (snake), player moves back by X spaces
--- If player lands on a drifblim (balloon-like thing), player moves forward by X spaces
--- First player to reach 100 wins (and game is reset)
+* 2 player turn-based game
+* Player rolls the dice to determine number of moves to make
+  - If player lands on an ekans (snake), player moves back by X spaces
+  - If player lands on a drifblim (balloon-like thing), player moves forward by X spaces
+* First player to reach 100 wins (and game is reset)
 
 Stacks:
--- Board is made using HTML/CSS, and with JS using an array & for loop
--- Ekans and drifblim: Created with an array
--- Player pieces are appended to each box div which corresponds to ID
--- CSS: Sweetalert2 was used to make nicer alert boxes
+* HTML, CSS and JS
