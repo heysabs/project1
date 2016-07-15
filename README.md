@@ -19,6 +19,6 @@ if you're nice to them, you may hitch a ride towards the top!
 * HTML, CSS and JS
 
 ##Reference:
-* pokemonDB for sprites
+* [pokemonDB] for sprites
 
 [pokemonDB]: <pokemondb.net/sprites>
