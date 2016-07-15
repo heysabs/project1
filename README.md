@@ -21,4 +21,4 @@ if you're nice to them, you may hitch a ride towards the top!
 ##Reference:
 * [pokemonDB] for sprites
 
-[pokemonDB]: <pokemondb.net/sprites>
+[pokemonDB]: <http://pokemondb.net/sprites>
