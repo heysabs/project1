@@ -68,7 +68,7 @@ $(document).ready(function() {
 
   // Activate the dice!
   $('#roll').click(function() {
-    var result = rollDice();
+    rollDice();
     newPosition();
     checkWinner();
     playerTurnNumber++;

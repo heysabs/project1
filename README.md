@@ -1,22 +1,24 @@
-#EKANSEECLEARLYNOW: A Pokemon-themed game of Snakes & Ladders
+#EKANSEECLEARLYNOW
+A Pokemon-themed game of Snakes & Ladders
 
 Pikachu and Charmander are racing to the top of the game board!
 
 You need to be wary of the ekans-infested terrain, though: an ekans attack
-will set you back by up to 40 spaces!
+will set you back by up to 40 spaces.
 
 On the bright side, friendly drifblims are also lurking around the forest -
 if you're nice to them, you may hitch a ride towards the top!
 
-Game play:
--- 2 player turn-based game
--- Player rolls the dice to determine number of moves to make
--- If player lands on an ekans (snake), player moves back by X spaces
--- If player lands on a drifblim (balloon-like thing), player moves forward by X spaces
--- First player to reach 100 wins (and game is reset)
+##Game play:
+* 2 player turn-based game
+* Player rolls the dice to determine number of moves to make
+  - If player lands on an ekans (snake), player moves back by X spaces
+  - If player lands on a drifblim (balloon-like thing), player moves forward by X spaces
+* First player to reach 100 wins (and game is reset)
 
-Stacks:
--- Board is made using HTML/CSS, and with JS using an array & for loop
--- Ekans and drifblim: Created with an array
--- Player pieces are appended to each box div which corresponds to ID
--- CSS: Sweetalert2 was used to make nicer alert boxes
+##Stacks:
+* HTML, CSS and JS
+<!-- * Board is made using HTML/CSS, and with JS using an array & for loop
+* Ekans and drifblim: Created with an array
+* Player pieces are appended to each box div which corresponds to ID
+* CSS: Sweetalert2 was used to make nicer alert boxes -->
